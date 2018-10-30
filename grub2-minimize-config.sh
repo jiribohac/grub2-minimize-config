@@ -22,10 +22,12 @@
 # It will tell you wat to do.
 
 [[ -d /etc/grub.d ]] || return
-
+cp /etc/default/grub /etc/default/grub.orig
 cat > /etc/default/grub <<EOF
-# beware, modified scripts in /etc/grub.d
-# only some settings usually found in this file are supported
+# Beware, modified scripts in /etc/grub.d
+# Only some settings usually found in this file are supported.
+# To get the default grub setup, copy /etc/default/grub.orig to /etc/default/grub
+# and /etc/grub.d/orig/* to /etc/grub.d
 
 # don't use UUID for root= by default
 GRUB_DISABLE_LINUX_UUID="true"
